@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		308662B6E3CD9CA21E34B517 /* Pods_NeonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0414F8C6C5A2D5354A57BC4F /* Pods_NeonTests.framework */; };
+		8A94682434720F3494703601 /* Pods_Neon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3D394B0007965F574A4967 /* Pods_Neon.framework */; };
 		A020980D1D6DCCE7003283AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A020980C1D6DCCE7003283AE /* AppDelegate.swift */; };
 		A020980F1D6DCCE7003283AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A020980E1D6DCCE7003283AE /* ViewController.swift */; };
 		A02098121D6DCCE7003283AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02098101D6DCCE7003283AE /* Main.storyboard */; };
@@ -26,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01D8100895FF305A06AA2AD4 /* Pods-Neon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neon/Pods-Neon.release.xcconfig"; sourceTree = "<group>"; };
+		0414F8C6C5A2D5354A57BC4F /* Pods_NeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		305F8B72C14421C52E469F83 /* Pods-NeonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeonTests/Pods-NeonTests.release.xcconfig"; sourceTree = "<group>"; };
+		35B2203BCB43A92A153C4D81 /* Pods-NeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeonTests/Pods-NeonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B3D394B0007965F574A4967 /* Pods_Neon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02098091D6DCCE7003283AE /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A020980C1D6DCCE7003283AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A020980E1D6DCCE7003283AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		A020981D1D6DCCE7003283AE /* NeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02098211D6DCCE7003283AE /* NeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonTests.swift; sourceTree = "<group>"; };
 		A02098231D6DCCE7003283AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD486D4543EC5786D16F260A /* Pods-Neon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neon/Pods-Neon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A94682434720F3494703601 /* Pods_Neon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308662B6E3CD9CA21E34B517 /* Pods_NeonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51DC0823D9070A7A02701EFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B3D394B0007965F574A4967 /* Pods_Neon.framework */,
+				0414F8C6C5A2D5354A57BC4F /* Pods_NeonTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A02098001D6DCCE7003283AE = {
 			isa = PBXGroup;
 			children = (
 				A020980B1D6DCCE7003283AE /* Neon */,
 				A02098201D6DCCE7003283AE /* NeonTests */,
 				A020980A1D6DCCE7003283AE /* Products */,
+				E8F5A5863A3E011845429E71 /* Pods */,
+				51DC0823D9070A7A02701EFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +117,17 @@
 			path = NeonTests;
 			sourceTree = "<group>";
 		};
+		E8F5A5863A3E011845429E71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD486D4543EC5786D16F260A /* Pods-Neon.debug.xcconfig */,
+				01D8100895FF305A06AA2AD4 /* Pods-Neon.release.xcconfig */,
+				35B2203BCB43A92A153C4D81 /* Pods-NeonTests.debug.xcconfig */,
+				305F8B72C14421C52E469F83 /* Pods-NeonTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A02098261D6DCCE7003283AE /* Build configuration list for PBXNativeTarget "Neon" */;
 			buildPhases = (
+				A019E2030EA3365E4C004B10 /* [CP] Check Pods Manifest.lock */,
 				A02098051D6DCCE7003283AE /* Sources */,
 				A02098061D6DCCE7003283AE /* Frameworks */,
 				A02098071D6DCCE7003283AE /* Resources */,
+				DFDF983AB5FCDD24EAE94EF6 /* [CP] Embed Pods Frameworks */,
+				21A57CC041A7DF358EFEEA0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A02098291D6DCCE7003283AE /* Build configuration list for PBXNativeTarget "NeonTests" */;
 			buildPhases = (
+				3C6491AA42E5CCDA9FECFC4E /* [CP] Check Pods Manifest.lock */,
 				A02098191D6DCCE7003283AE /* Sources */,
 				A020981A1D6DCCE7003283AE /* Frameworks */,
 				A020981B1D6DCCE7003283AE /* Resources */,
+				AF2D928EA4A178C88471069C /* [CP] Embed Pods Frameworks */,
+				B4F8B88F527013445F961D2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +229,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21A57CC041A7DF358EFEEA0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neon/Pods-Neon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C6491AA42E5CCDA9FECFC4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A019E2030EA3365E4C004B10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF2D928EA4A178C88471069C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeonTests/Pods-NeonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4F8B88F527013445F961D2C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeonTests/Pods-NeonTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFDF983AB5FCDD24EAE94EF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neon/Pods-Neon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A02098051D6DCCE7003283AE /* Sources */ = {
@@ -327,6 +458,7 @@
 		};
 		A02098271D6DCCE7003283AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD486D4543EC5786D16F260A /* Pods-Neon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Neon/Info.plist;
@@ -338,6 +470,7 @@
 		};
 		A02098281D6DCCE7003283AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01D8100895FF305A06AA2AD4 /* Pods-Neon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Neon/Info.plist;
@@ -349,6 +482,7 @@
 		};
 		A020982A1D6DCCE7003283AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35B2203BCB43A92A153C4D81 /* Pods-NeonTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NeonTests/Info.plist;
@@ -361,6 +495,7 @@
 		};
 		A020982B1D6DCCE7003283AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 305F8B72C14421C52E469F83 /* Pods-NeonTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NeonTests/Info.plist;
@@ -390,6 +525,7 @@
 				A02098281D6DCCE7003283AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A02098291D6DCCE7003283AE /* Build configuration list for PBXNativeTarget "NeonTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +534,7 @@
 				A020982B1D6DCCE7003283AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
