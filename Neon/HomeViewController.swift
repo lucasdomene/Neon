@@ -26,9 +26,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureImageView()
-        GenerateTokenRequest().makeRequest(userNameLabel.text!, emaill: userEmailLabel.text!) { (token, error) in
-            self.appDelegate.token = token
-        }
+        generateToken()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -41,6 +39,20 @@ class HomeViewController: UIViewController {
     func configureImageView() {
         userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
         userImageView.layer.masksToBounds = true
+    }
+    
+    // MARK: - Data Fetchers
+    
+    func generateToken() {
+        GenerateTokenRequest().makeRequest(userNameLabel.text!, emaill: userEmailLabel.text!) { (token, error) in
+            if error != nil {
+                // TREAT ERROR
+                // RETRY AFTER ALERT
+                //self.generateToken()
+            } else {
+                self.appDelegate.token = token
+            }
+        }
     }
 }
 

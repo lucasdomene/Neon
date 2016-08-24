@@ -23,6 +23,7 @@
 		A0BD1BC61D6E17C90040A71D /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC51D6E17C90040A71D /* BaseRequest.swift */; };
 		A0BD1BC81D6E18190040A71D /* GenerateTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC71D6E18190040A71D /* GenerateTokenRequest.swift */; };
 		A0BD1BCA1D6E1CAD0040A71D /* ErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC91D6E1CAD0040A71D /* ErrorList.swift */; };
+		A0BD1BCC1D6E1E6E0040A71D /* SendMoneyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BCB1D6E1E6E0040A71D /* SendMoneyRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A0BD1BC51D6E17C90040A71D /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		A0BD1BC71D6E18190040A71D /* GenerateTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateTokenRequest.swift; sourceTree = "<group>"; };
 		A0BD1BC91D6E1CAD0040A71D /* ErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorList.swift; sourceTree = "<group>"; };
+		A0BD1BCB1D6E1E6E0040A71D /* SendMoneyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMoneyRequest.swift; sourceTree = "<group>"; };
 		FD486D4543EC5786D16F260A /* Pods-Neon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neon/Pods-Neon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 			children = (
 				A0BD1BC51D6E17C90040A71D /* BaseRequest.swift */,
 				A0BD1BC71D6E18190040A71D /* GenerateTokenRequest.swift */,
+				A0BD1BCB1D6E1E6E0040A71D /* SendMoneyRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				A0BD1BBC1D6DE8580040A71D /* ContactsTableViewController.swift in Sources */,
 				A0BD1BCA1D6E1CAD0040A71D /* ErrorList.swift in Sources */,
 				A0BD1BC81D6E18190040A71D /* GenerateTokenRequest.swift in Sources */,
+				A0BD1BCC1D6E1E6E0040A71D /* SendMoneyRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

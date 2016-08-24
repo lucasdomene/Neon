@@ -13,6 +13,7 @@ class ContactsTableViewController: UITableViewController {
     
     // MARK: - Attributes
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var contacts = [Contact]()
     
     // MARK: - Life Cycle
@@ -40,7 +41,7 @@ class ContactsTableViewController: UITableViewController {
         textField.text = "R$ " + textField.text!
         
         alertView.addButton("ENVIAR", action: {
-            self.sendMoney(textField.text ?? "0")
+            self.sendMoney(contact, amount: textField.text ?? "0")
         })
         alertView.addButton("CANCELAR", action: {})
         
@@ -51,14 +52,20 @@ class ContactsTableViewController: UITableViewController {
     // MARK: - Data Fetchers
     
     func retrieveContacts() {
-        let firstContact = Contact(id: 0, firstName: "Lucas", surname: "Domene", phone: "(11)99528-1889")
+        let firstContact = Contact(id: "0", firstName: "Lucas", surname: "Domene", phone: "(11)99528-1889")
         contacts.appendContentsOf([firstContact, firstContact, firstContact, firstContact])
     }
     
     // MARK: - Send Money
     
-    func sendMoney(amount: String) {
-        print("TRANSFER AMOUNT: \(amount.formatedMoneyAmount())")
+    func sendMoney(contact: Contact, amount: String) {
+        SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token!, amount: amount.formatedMoneyAmount()) { isSuccess in
+            if isSuccess {
+                // TREAT SUCCESS
+            } else {
+                // TREAT FAILURE
+            }
+        }
     }
     
     // MARK: - Table View Data Source
