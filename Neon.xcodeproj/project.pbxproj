@@ -19,6 +19,10 @@
 		A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */; };
 		A0BD1BC01D6DEB720040A71D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBF1D6DEB720040A71D /* Contact.swift */; };
 		A0BD1BC21D6E07710040A71D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC11D6E07710040A71D /* String+Ext.swift */; };
+		A0BD1BC41D6E17150040A71D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC31D6E17150040A71D /* Constants.swift */; };
+		A0BD1BC61D6E17C90040A71D /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC51D6E17C90040A71D /* BaseRequest.swift */; };
+		A0BD1BC81D6E18190040A71D /* GenerateTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC71D6E18190040A71D /* GenerateTokenRequest.swift */; };
+		A0BD1BCA1D6E1CAD0040A71D /* ErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BC91D6E1CAD0040A71D /* ErrorList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		A0BD1BBF1D6DEB720040A71D /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		A0BD1BC11D6E07710040A71D /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		A0BD1BC31D6E17150040A71D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0BD1BC51D6E17C90040A71D /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		A0BD1BC71D6E18190040A71D /* GenerateTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateTokenRequest.swift; sourceTree = "<group>"; };
+		A0BD1BC91D6E1CAD0040A71D /* ErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorList.swift; sourceTree = "<group>"; };
 		FD486D4543EC5786D16F260A /* Pods-Neon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neon/Pods-Neon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +158,8 @@
 		A0BD1BB71D6DE3350040A71D /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				A0BD1BC31D6E17150040A71D /* Constants.swift */,
+				A0BD1BC91D6E1CAD0040A71D /* ErrorList.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -157,6 +167,8 @@
 		A0BD1BB81D6DE33B0040A71D /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				A0BD1BC51D6E17C90040A71D /* BaseRequest.swift */,
+				A0BD1BC71D6E18190040A71D /* GenerateTokenRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -388,12 +400,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BD1BC61D6E17C90040A71D /* BaseRequest.swift in Sources */,
 				A0BD1BC21D6E07710040A71D /* String+Ext.swift in Sources */,
 				A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */,
 				A020980F1D6DCCE7003283AE /* HomeViewController.swift in Sources */,
 				A0BD1BC01D6DEB720040A71D /* Contact.swift in Sources */,
+				A0BD1BC41D6E17150040A71D /* Constants.swift in Sources */,
 				A020980D1D6DCCE7003283AE /* AppDelegate.swift in Sources */,
 				A0BD1BBC1D6DE8580040A71D /* ContactsTableViewController.swift in Sources */,
+				A0BD1BCA1D6E1CAD0040A71D /* ErrorList.swift in Sources */,
+				A0BD1BC81D6E18190040A71D /* GenerateTokenRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

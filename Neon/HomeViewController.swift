@@ -18,11 +18,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sendMoneyButton: UIButton!
     @IBOutlet weak var transfersHistoryButton: UIButton!
     
+    // MARK: - Attributes
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureImageView()
+        GenerateTokenRequest().makeRequest(userNameLabel.text!, emaill: userEmailLabel.text!) { (token, error) in
+            self.appDelegate.token = token
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
