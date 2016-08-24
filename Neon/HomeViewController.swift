@@ -36,14 +36,5 @@ class HomeViewController: UIViewController {
         userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
         userImageView.layer.masksToBounds = true
     }
-    
-    // MARK: - IBActions
-    
-    @IBAction func sendMoneyPressed(sender: UIButton) {
-        
-    }
-    
-    @IBAction func transfersHistoryPressed(sender: UIButton) {
-    }
 }
 

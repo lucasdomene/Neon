@@ -15,6 +15,7 @@ class ContactCell: UITableViewCell {
     @IBOutlet weak var contactImageView: UIImageView!
     @IBOutlet weak var contactNameLabel: UILabel!
     @IBOutlet weak var contactPhoneLabel: UILabel!
+    @IBOutlet weak var contactNameInitials: UILabel!
     
     // MARK: - Cell Configuration
     
@@ -29,5 +30,16 @@ class ContactCell: UITableViewCell {
         configureContactImageView()
         contactNameLabel.text = contact.fullName()
         contactPhoneLabel.text = contact.phone
+        setNameInitialsToContactViewPhoto(contact)
+    }
+    
+    func setNameInitialsToContactViewPhoto(contact: Contact) {
+        if let firstLetter = contact.firstName.characters.first, lastLetter = contact.surname.characters.first {
+            let nameInitials = "\(firstLetter)\(lastLetter)".uppercaseString
+            contactNameInitials.text = nameInitials
+            contactNameInitials.hidden = false
+        } else {
+            // TREAT NO PHOTO AND ERROR GETTING INITIALS
+        }
     }
 }
