@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SCLAlertView
 
 class HomeViewController: UIViewController {
     
@@ -45,17 +44,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func transfersHistoryPressed(sender: UIButton) {
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: false
-        )
-        let alertView = SCLAlertView(appearance: appearance)
-        let textField = alertView.addTextField("R$ 0,00")
-        textField.keyboardType = .DecimalPad
-        textField.text = "R$ " + textField.text!
-        
-        alertView.addButton("ENVIAR", action: {})
-        alertView.addButton("CANCELAR", action: {})
-        alertView.showSuccess("Lucas Domene", subTitle: "(11)99528-1889")
     }
 }
 

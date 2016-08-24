@@ -27,7 +27,7 @@ class ContactCell: UITableViewCell {
     
     func fill(contact: Contact) {
         configureContactImageView()
-        contactNameLabel.text = contact.firstName + " " + contact.surname
+        contactNameLabel.text = contact.fullName()
         contactPhoneLabel.text = contact.phone
     }
 }

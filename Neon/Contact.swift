@@ -27,4 +27,10 @@ class Contact {
         self.phone = phone
         self.photo = photo
     }
+    
+    // MARK: - Helper Methods
+    
+    func fullName() -> String {
+        return firstName + " " + surname
+    }
 }
