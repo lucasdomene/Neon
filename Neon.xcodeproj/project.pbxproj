@@ -10,11 +10,14 @@
 		308662B6E3CD9CA21E34B517 /* Pods_NeonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0414F8C6C5A2D5354A57BC4F /* Pods_NeonTests.framework */; };
 		8A94682434720F3494703601 /* Pods_Neon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3D394B0007965F574A4967 /* Pods_Neon.framework */; };
 		A020980D1D6DCCE7003283AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A020980C1D6DCCE7003283AE /* AppDelegate.swift */; };
-		A020980F1D6DCCE7003283AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A020980E1D6DCCE7003283AE /* ViewController.swift */; };
+		A020980F1D6DCCE7003283AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A020980E1D6DCCE7003283AE /* HomeViewController.swift */; };
 		A02098121D6DCCE7003283AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02098101D6DCCE7003283AE /* Main.storyboard */; };
 		A02098141D6DCCE7003283AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02098131D6DCCE7003283AE /* Assets.xcassets */; };
 		A02098171D6DCCE7003283AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02098151D6DCCE7003283AE /* LaunchScreen.storyboard */; };
 		A02098221D6DCCE7003283AE /* NeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02098211D6DCCE7003283AE /* NeonTests.swift */; };
+		A0BD1BBC1D6DE8580040A71D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */; };
+		A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */; };
+		A0BD1BC01D6DEB720040A71D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBF1D6DEB720040A71D /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,7 @@
 		6B3D394B0007965F574A4967 /* Pods_Neon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02098091D6DCCE7003283AE /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A020980C1D6DCCE7003283AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A020980E1D6DCCE7003283AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A020980E1D6DCCE7003283AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A02098111D6DCCE7003283AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A02098131D6DCCE7003283AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A02098161D6DCCE7003283AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +46,9 @@
 		A020981D1D6DCCE7003283AE /* NeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02098211D6DCCE7003283AE /* NeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonTests.swift; sourceTree = "<group>"; };
 		A02098231D6DCCE7003283AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		A0BD1BBF1D6DEB720040A71D /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		FD486D4543EC5786D16F260A /* Pods-Neon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neon/Pods-Neon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,8 +104,13 @@
 		A020980B1D6DCCE7003283AE /* Neon */ = {
 			isa = PBXGroup;
 			children = (
+				A0BD1BBA1D6DE3770040A71D /* Cells */,
+				A0BD1BB91D6DE3690040A71D /* Extensions */,
+				A0BD1BB81D6DE33B0040A71D /* Requests */,
+				A0BD1BB71D6DE3350040A71D /* Constants */,
+				A0BD1BB61D6DE32A0040A71D /* ViewControllers */,
+				A0BD1BB51D6DE3210040A71D /* Models */,
 				A020980C1D6DCCE7003283AE /* AppDelegate.swift */,
-				A020980E1D6DCCE7003283AE /* ViewController.swift */,
 				A02098101D6DCCE7003283AE /* Main.storyboard */,
 				A02098131D6DCCE7003283AE /* Assets.xcassets */,
 				A02098151D6DCCE7003283AE /* LaunchScreen.storyboard */,
@@ -115,6 +126,52 @@
 				A02098231D6DCCE7003283AE /* Info.plist */,
 			);
 			path = NeonTests;
+			sourceTree = "<group>";
+		};
+		A0BD1BB51D6DE3210040A71D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0BD1BBF1D6DEB720040A71D /* Contact.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A0BD1BB61D6DE32A0040A71D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A020980E1D6DCCE7003283AE /* HomeViewController.swift */,
+				A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A0BD1BB71D6DE3350040A71D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		A0BD1BB81D6DE33B0040A71D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		A0BD1BB91D6DE3690040A71D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A0BD1BBA1D6DE3770040A71D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		E8F5A5863A3E011845429E71 /* Pods */ = {
@@ -328,8 +385,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A020980F1D6DCCE7003283AE /* ViewController.swift in Sources */,
+				A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */,
+				A020980F1D6DCCE7003283AE /* HomeViewController.swift in Sources */,
+				A0BD1BC01D6DEB720040A71D /* Contact.swift in Sources */,
 				A020980D1D6DCCE7003283AE /* AppDelegate.swift in Sources */,
+				A0BD1BBC1D6DE8580040A71D /* ContactsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
