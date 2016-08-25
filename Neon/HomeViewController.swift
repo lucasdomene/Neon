@@ -44,6 +44,8 @@ class HomeViewController: UIViewController {
     
     func configureImageView() {
         userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
+        userImageView.layer.borderColor = CUSTOM_BLUE_COLOR.CGColor
+        userImageView.layer.borderWidth = 3
         userImageView.layer.masksToBounds = true
     }
     
@@ -51,7 +53,6 @@ class HomeViewController: UIViewController {
         shadowView = UIView(frame: view.frame)
         shadowView.backgroundColor = UIColor.blackColor()
         shadowView.alpha = 0.5
-        
     }
     
     // MARK: - Data Fetchers
@@ -62,12 +63,14 @@ class HomeViewController: UIViewController {
             if error != nil {
                 self.disableButtons()
                 self.stopLoading()
-                self.showRetryAlert()
+                SCLAlertView().showRetryAlert("Não foi possível se conectar. Tentar novamente?", retryMethod: {
+                    self.generateToken()
+                })
             } else {
                 self.appDelegate.token = token
                 self.enableButtons()
                 self.stopLoading()
-                self.showConnectedAlert()
+                SCLAlertView().showConnectedAlert()
             }
         }
     }
@@ -87,24 +90,6 @@ class HomeViewController: UIViewController {
         shadowView.removeFromSuperview()
         activityIndicator.stopAnimating()
         connectingLabel.hidden = true
-    }
-    
-    // MARK: - Alert
-    
-    func showRetryAlert() {
-        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
-        let retryAlert = SCLAlertView(appearance: appearance)
-        retryAlert.addButton("SIM", action: { self.generateToken() })
-        retryAlert.addButton("CANCELAR", action: {})
-        retryAlert.showError("Ops!", subTitle: "Não foi possível se conectar. Tentar novamente?")
-    }
-    
-    func showConnectedAlert() {
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: false
-        )
-        let alertView = SCLAlertView(appearance: appearance)
-        alertView.showSuccess("Conectado!", subTitle: "", duration: 1)
     }
     
     // MARK: - Buttons 

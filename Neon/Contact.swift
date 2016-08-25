@@ -13,7 +13,7 @@ class Contact {
     
     // MARK: - Attributes
     
-    var id: String
+    var id: Int
     var firstName: String
     var surname: String
     var phone: String
@@ -21,7 +21,7 @@ class Contact {
     
     // MARK: - Initializer
     
-    init(id: String, firstName: String, surname: String, phone: String, photo: String? = nil) {
+    init(id: Int, firstName: String, surname: String, phone: String, photo: String? = nil) {
         self.id = id
         self.firstName = firstName
         self.surname = surname

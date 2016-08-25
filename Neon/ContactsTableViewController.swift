@@ -28,24 +28,6 @@ class ContactsTableViewController: BaseTableViewController {
         navigationItem.title = "ENVIAR DINHEIRO"
     }
     
-    // MARK: - Alert View
-    
-    func showTransferAlert(contact: Contact) {
-        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false, kCircleIconHeight: 50)
-        let alertView = SCLAlertView(appearance: appearance)
-        
-        let textField = alertView.addTextField("R$ 0,00")
-        textField.keyboardType = .DecimalPad
-        textField.text = "R$ " + textField.text!
-        
-        alertView.addButton("ENVIAR", action: {
-            self.sendMoney(contact, amount: textField.text ?? "0")
-        })
-        alertView.addButton("CANCELAR", action: {})
-        
-        alertView.showInfo(contact.fullName(), subTitle: contact.phone, circleIconImage: contact.photoImage())
-    }
-    
     // MARK: - Data Fetchers
     
     func retrieveContacts() {
@@ -97,7 +79,10 @@ class ContactsTableViewController: BaseTableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        showTransferAlert(contacts[indexPath.row])
+        let contact = contacts[indexPath.row]
+        SCLAlertView().showTransferAlert(contact) { amount in
+            self.sendMoney(contact, amount: amount)
+        }
     }
     
 }

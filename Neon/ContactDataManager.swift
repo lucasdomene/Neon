@@ -32,7 +32,7 @@ class ContactDataManager {
         return contacts!
     }
     
-    func getContactWithID(id: String) -> Contact? {
+    func getContactWithID(id: Int) -> Contact? {
         for contact in getContacts() {
             if contact.id == id {
                 return contact
@@ -54,7 +54,7 @@ class ContactDataManager {
     
     func createContactsFromArray(contactsArray: NSArray) {
         for contactDictionary in contactsArray {
-            let contact = Contact(id: contactDictionary.objectForKey("id") as! String,
+            let contact = Contact(id: Int(contactDictionary.objectForKey("id") as! String)!,
                                   firstName: contactDictionary.objectForKey("firstName") as! String,
                                   surname: contactDictionary.objectForKey("surname") as! String,
                                   phone: contactDictionary.objectForKey("phone") as! String,

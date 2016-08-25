@@ -37,6 +37,7 @@ class TransfersTableViewController: BaseTableViewController {
                 self.showRetryAlert()
             } else {
                 self.transfers = transfers!
+                self.transfers = self.transfers.reverse()
                 self.tableView.reloadData()
             }
             self.stopLoading()
@@ -67,7 +68,7 @@ class TransfersTableViewController: BaseTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as? ContactCell
         let transfer = transfers[indexPath.row]
-        let contact = ContactDataManager.sharedInstance.getContactWithID(String(transfer.clientID))
+        let contact = ContactDataManager.sharedInstance.getContactWithID(transfer.clientID)
         
         guard cell != nil else {
             return ContactCell()
@@ -90,7 +91,7 @@ class TransfersTableViewController: BaseTableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let transfer = transfers[indexPath.row]
-        if let contact = ContactDataManager.sharedInstance.getContactWithID(String(transfer.clientID)) {
+        if let contact = ContactDataManager.sharedInstance.getContactWithID(transfer.clientID) {
             showTransferDetails(transfer, contact: contact)
         } else {
             SCLAlertView().showError("Ops!", subTitle: "Ocorreu um erro! Tente novamente.")
@@ -98,6 +99,7 @@ class TransfersTableViewController: BaseTableViewController {
     }
     
     // MARK: - Alerts
+    
     func showRetryAlert() {
         let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
         let retryAlert = SCLAlertView(appearance: appearance)
