@@ -9,31 +9,23 @@
 import UIKit
 import SCLAlertView
 
-class ContactsTableViewController: UITableViewController {
+class ContactsTableViewController: BaseTableViewController {
     
     // MARK: - Attributes
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var contacts = [Contact]()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCell()
         retrieveContacts()
         tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "ENVIAR DINHEIRO"
-    }
-    
-    func registerCell() {
-        let nib = UINib(nibName: "ContactCell", bundle: nil)
-        self.tableView.registerNib(nib, forCellReuseIdentifier: "ContactCell")
     }
     
     // MARK: - Alert View
@@ -65,12 +57,14 @@ class ContactsTableViewController: UITableViewController {
     func sendMoney(contact: Contact, amount: String) {
         let formattedAmout = amount.formattedMoneyAmount()
         if formattedAmout > 0 {
+            startLoading()
             SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token!, amount: formattedAmout) { isSuccess in
                 if isSuccess {
                     SCLAlertView().showSuccess("Enviado!", subTitle: "Quantidade enviada: R$ \(formattedAmout)")
                 } else {
                     SCLAlertView().showError("Ops!", subTitle: "Ocorreu um erro no envio! Tente novamente.")
                 }
+                self.stopLoading()
             }
         } else {
             SCLAlertView().showWarning("Ops!", subTitle: "Não é possível enviar R$ 0,00!")

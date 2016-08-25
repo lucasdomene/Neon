@@ -9,43 +9,37 @@
 import UIKit
 import SCLAlertView
 
-class TransfersTableViewController: UITableViewController {
+class TransfersTableViewController: BaseTableViewController {
 
     // MARK: - Attributes
-    
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
     var transfers = [Transfer]()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCell()
         fetchTransfers()
         self.tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "HISTÓRICO DE ENVIOS"
-    }
-    
-    func registerCell() {
-        let nib = UINib(nibName: "ContactCell", bundle: nil)
-        self.tableView.registerNib(nib, forCellReuseIdentifier: "ContactCell")
     }
     
     // MARK: - Data Fetchers
     
     func fetchTransfers() {
+        startLoading()
         TransfersRequest().makeRequest(appDelegate.token!, completion: { transfers, error in
             if error != nil {
-                // TREAT ERROR
+                self.showRetryAlert()
             } else {
                 self.transfers = transfers!
                 self.tableView.reloadData()
             }
+            self.stopLoading()
         })
     }
     
@@ -101,5 +95,14 @@ class TransfersTableViewController: UITableViewController {
         } else {
             SCLAlertView().showError("Ops!", subTitle: "Ocorreu um erro! Tente novamente.")
         }
+    }
+    
+    // MARK: - Alerts
+    func showRetryAlert() {
+        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
+        let retryAlert = SCLAlertView(appearance: appearance)
+        retryAlert.addButton("SIM", action: { self.fetchTransfers() })
+        retryAlert.addButton("CANCELAR", action: {})
+        retryAlert.showError("Ops!", subTitle: "Não foi possível recuperar as transferências. Tentar novamente?")
     }
 }

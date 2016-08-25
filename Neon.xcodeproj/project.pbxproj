@@ -15,6 +15,7 @@
 		A02098141D6DCCE7003283AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02098131D6DCCE7003283AE /* Assets.xcassets */; };
 		A02098171D6DCCE7003283AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02098151D6DCCE7003283AE /* LaunchScreen.storyboard */; };
 		A02098221D6DCCE7003283AE /* NeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02098211D6DCCE7003283AE /* NeonTests.swift */; };
+		A040F74D1D6F95E90083325B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040F74C1D6F95E90083325B /* BaseTableViewController.swift */; };
 		A05A76AD1D6F2E7D0092B725 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = A05A76AC1D6F2E7D0092B725 /* me.png */; };
 		A0BD1BBC1D6DE8580040A71D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */; };
 		A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */; };
@@ -75,6 +76,7 @@
 		A020981D1D6DCCE7003283AE /* NeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02098211D6DCCE7003283AE /* NeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonTests.swift; sourceTree = "<group>"; };
 		A02098231D6DCCE7003283AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A040F74C1D6F95E90083325B /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		A05A76AC1D6F2E7D0092B725 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				A020980E1D6DCCE7003283AE /* HomeViewController.swift */,
 				A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */,
 				A0BD1BD71D6E33DB0040A71D /* TransfersTableViewController.swift */,
+				A040F74C1D6F95E90083325B /* BaseTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				A0BD1BD81D6E33DB0040A71D /* TransfersTableViewController.swift in Sources */,
 				A0BD1BC21D6E07710040A71D /* String+Ext.swift in Sources */,
 				A0BD1BD21D6E2A9D0040A71D /* TransfersRequest.swift in Sources */,
+				A040F74D1D6F95E90083325B /* BaseTableViewController.swift in Sources */,
 				A0BD1BFC1D6E6D150040A71D /* ContactDataManager.swift in Sources */,
 				A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */,
 				A020980F1D6DCCE7003283AE /* HomeViewController.swift in Sources */,
