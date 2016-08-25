@@ -11,14 +11,14 @@ import SCLAlertView
 
 extension SCLAlertView {
     
-    // MARK: - Alert
+    // MARK: - Alerts
     
     func showRetryAlert(message: String, retryMethod: () -> ()) {
         let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
         let retryAlert = SCLAlertView(appearance: appearance)
         retryAlert.addButton("SIM", action: { retryMethod() })
         retryAlert.addButton(CANCEL, action: {})
-        retryAlert.showError(WARNING, subTitle: CONNECTION_ERROR)
+        retryAlert.showError(WARNING, subTitle: message)
     }
     
     func showConnectedAlert() {

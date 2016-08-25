@@ -41,6 +41,7 @@ let SEND = "ENVIAR"
 let CONNECTED = "Conectado!"
 let CANCEL = "CANCELAR"
 let CONNECTION_ERROR = "Não foi possível se conectar. Tentar novamente?"
+let INTERNET_ERROR = "Verifique sua conexão com a internet. Tentar novamente?"
 
 // MARK: - Navigation Titles
 

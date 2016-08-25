@@ -59,11 +59,11 @@ class HomeViewController: UIViewController {
     
     func generateToken() {
         startLoading()
-        GenerateTokenRequest().makeRequest(userNameLabel.text!, emaill: userEmailLabel.text!) { (token, error) in
+        GenerateTokenRequest().makeRequest(userNameLabel.text!, emaill: userEmailLabel.text!) { token, error in
             if error != nil {
                 self.disableButtons()
                 self.stopLoading()
-                SCLAlertView().showRetryAlert(CONNECTION_ERROR, retryMethod: {
+                SCLAlertView().showRetryAlert(error! == Errors.NoConnection ? INTERNET_ERROR : CONNECTION_ERROR, retryMethod: {
                     self.generateToken()
                 })
             } else {

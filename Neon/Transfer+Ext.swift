@@ -16,22 +16,22 @@ extension Transfer {
             amount = json[AMOUNT_KEY] as? Double,
             token = json[TOKEN_KEY] as? String,
             date = json[DATE_KEY] as? String else {
-                throw JSONMappingError.KeyNotFound
+                throw Errors.JSONMappingKeyNotFound
         }
         
         self.init(id: id, clientID: clientID, amount: amount, token: token, date: date)
     }
     
-    class func massCreation(jsonArray: [JSONDictionary]) -> ([Transfer]?, ErrorType?) {
+    class func massCreation(jsonArray: [JSONDictionary]) -> ([Transfer]?, Errors?) {
         var transfers = [Transfer]()
         for jsonDict in jsonArray {
             var transfer: Transfer? = nil
             do {
                 transfer = try Transfer(json: jsonDict)
-            } catch JSONMappingError.KeyNotFound {
-                return (nil, JSONMappingError.KeyNotFound)
+            } catch Errors.JSONMappingKeyNotFound {
+                return (nil, Errors.JSONMappingKeyNotFound)
             } catch {
-                return (nil, ObjectCreationError.Unknown)
+                return (nil, Errors.ObjectCreationError)
             }
             transfers.append(transfer!)
         }

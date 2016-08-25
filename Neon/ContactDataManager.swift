@@ -47,7 +47,6 @@ class ContactDataManager {
             contactsArray = NSArray(contentsOfFile: path)
             return contactsArray!
         } else {
-            // TREAT ERROR
             return nil
         }
     }

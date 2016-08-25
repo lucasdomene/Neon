@@ -8,18 +8,9 @@
 
 import Foundation
 
-enum JSONMappingError: ErrorType {
-    case KeyNotFound
-}
-
-enum ObjectCreationError: ErrorType {
-    case Unknown
-}
-
-enum InternalServerError: ErrorType {
-    case Unknown
-}
-
-enum InternetError: ErrorType {
+enum Errors: ErrorType {
+    case JSONMappingKeyNotFound
+    case ObjectCreationError
+    case InternalServerError
     case NoConnection
 }

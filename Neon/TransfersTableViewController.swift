@@ -34,7 +34,7 @@ class TransfersTableViewController: BaseTableViewController {
         startLoading()
         TransfersRequest().makeRequest(appDelegate.token!, completion: { transfers, error in
             if error != nil {
-                SCLAlertView().showRetryAlert(TRANSFERS_ERROR, retryMethod: {
+                SCLAlertView().showRetryAlert(error! == Errors.NoConnection ? INTERNET_ERROR : TRANSFERS_ERROR, retryMethod: {
                     self.fetchTransfers()
                 })
             } else {
