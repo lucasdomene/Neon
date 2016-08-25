@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class TransfersTableViewController: UITableViewController {
 
@@ -48,6 +49,17 @@ class TransfersTableViewController: UITableViewController {
         })
     }
     
+    // MARK: - Alerts
+    
+    func showTransferDetails(transfer: Transfer, contact: Contact) {
+        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false, kCircleIconHeight: 50)
+        let alertView = SCLAlertView(appearance: appearance)
+        
+        alertView.addButton("OK", action: {})
+        let detailsString = "\(contact.phone)\n\nValor transferido: R$ \(transfer.amount)"
+        alertView.showInfo(contact.fullName(), subTitle: detailsString, circleIconImage: contact.photoImage())
+    }
+    
     // MARK: - Table View Data Source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -83,6 +95,11 @@ class TransfersTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            
+        let transfer = transfers[indexPath.row]
+        if let contact = ContactDataManager.sharedInstance.getContactWithID(String(transfer.clientID)) {
+            showTransferDetails(transfer, contact: contact)
+        } else {
+            SCLAlertView().showError("Ops!", subTitle: "Ocorreu um erro! Tente novamente.")
+        }
     }
 }
