@@ -41,8 +41,8 @@ class ContactsTableViewController: UITableViewController {
     func showTransferAlert(contact: Contact) {
         let appearance = SCLAlertView.SCLAppearance(showCloseButton: false, kCircleIconHeight: 50)
         let alertView = SCLAlertView(appearance: appearance)
-        let textField = alertView.addTextField("R$ 0,00")
         
+        let textField = alertView.addTextField("R$ 0,00")
         textField.keyboardType = .DecimalPad
         textField.text = "R$ " + textField.text!
         

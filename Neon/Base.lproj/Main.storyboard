@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmG-Io-Bzv">
-                                <rect key="frame" x="190.5" y="389" width="220" height="45"/>
+                                <rect key="frame" x="190" y="389" width="220" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="7SC-Rj-sY1"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stb-DA-xCs">
-                                <rect key="frame" x="190.5" y="442" width="220" height="45"/>
+                                <rect key="frame" x="190" y="442" width="220" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1E9-lM-poD"/>
@@ -85,17 +85,41 @@
                                     <segue destination="xST-8H-0nT" kind="show" id="zXy-53-IBJ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J3H-Bi-bk5">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="color" red="0.031372549020000001" green="0.92941176469999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conectando" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itq-XM-Udo">
+                                <rect key="frame" x="253" y="326" width="94" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SBI-Ed-X5b"/>
+                                    <constraint firstAttribute="width" constant="94" id="ync-Fr-SHH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.031372549020000001" green="0.92941176469999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="J3H-Bi-bk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1ak-fp-3p0"/>
                             <constraint firstItem="Stb-DA-xCs" firstAttribute="centerX" secondItem="AmG-Io-Bzv" secondAttribute="centerX" id="3VL-yv-POc"/>
                             <constraint firstItem="Stb-DA-xCs" firstAttribute="top" secondItem="AmG-Io-Bzv" secondAttribute="bottom" constant="8" id="7ZB-OM-Wme"/>
                             <constraint firstItem="80f-Tl-JjG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="9ib-e7-77g"/>
+                            <constraint firstItem="itq-XM-Udo" firstAttribute="centerX" secondItem="J3H-Bi-bk5" secondAttribute="centerX" id="AKx-Lp-x35"/>
                             <constraint firstItem="AmG-Io-Bzv" firstAttribute="top" secondItem="amS-ha-kgA" secondAttribute="bottom" constant="130" id="AbW-A6-pqk"/>
                             <constraint firstItem="yQK-Ee-owz" firstAttribute="centerX" secondItem="80f-Tl-JjG" secondAttribute="centerX" id="ICN-d3-3PD"/>
                             <constraint firstItem="amS-ha-kgA" firstAttribute="centerX" secondItem="yQK-Ee-owz" secondAttribute="centerX" id="IE3-SB-90Q"/>
                             <constraint firstItem="amS-ha-kgA" firstAttribute="top" secondItem="80f-Tl-JjG" secondAttribute="bottom" constant="28" id="RFk-PR-Vvg"/>
                             <constraint firstItem="yQK-Ee-owz" firstAttribute="top" secondItem="80f-Tl-JjG" secondAttribute="bottom" constant="8" id="UgP-Yr-632"/>
+                            <constraint firstItem="itq-XM-Udo" firstAttribute="top" secondItem="J3H-Bi-bk5" secondAttribute="bottom" constant="8" id="YYR-fJ-PfC"/>
+                            <constraint firstItem="J3H-Bi-bk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQT-oX-W31"/>
                             <constraint firstItem="AmG-Io-Bzv" firstAttribute="centerX" secondItem="amS-ha-kgA" secondAttribute="centerX" id="cbW-9m-Cc6"/>
                             <constraint firstItem="80f-Tl-JjG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mfk-s6-sSk"/>
                         </constraints>
@@ -103,6 +127,8 @@
                     <navigationItem key="navigationItem" id="zsK-Nv-3bm"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="J3H-Bi-bk5" id="9lA-LM-I6R"/>
+                        <outlet property="connectingLabel" destination="itq-XM-Udo" id="mPX-RB-bm1"/>
                         <outlet property="sendMoneyButton" destination="AmG-Io-Bzv" id="xz8-sK-6RD"/>
                         <outlet property="transfersHistoryButton" destination="Stb-DA-xCs" id="AZS-8u-tgA"/>
                         <outlet property="userEmailLabel" destination="amS-ha-kgA" id="w49-Zn-VQI"/>
