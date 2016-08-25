@@ -27,14 +27,24 @@ class ContactCell: UITableViewCell {
         contactImageView.layer.masksToBounds = true
     }
     
+    func clean() {
+        contactNameInitials.hidden = true
+        contactImageView.image = nil
+        contactNameLabel.text = ""
+        contactPhoneLabel.text = ""
+        transferDateLabel.text = ""
+        transferDateLabel.hidden = true
+    }
+    
     // MARK: - Content Managment
     
     func fill(contact: Contact) {
+        clean()
         configureContactImageView()
         contactNameLabel.text = contact.fullName()
         contactPhoneLabel.text = contact.phone
         
-        if contact.photo == nil {
+        if contact.photo == nil || contact.photo == "" {
             setNameInitialsToContactViewPhoto(contact)
         } else {
             contactImageView.image = UIImage(named: contact.photo!)

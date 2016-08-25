@@ -45,6 +45,7 @@
 		A0BD1BF71D6E64A80040A71D /* padrequemedo.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BD1BE81D6E64A80040A71D /* padrequemedo.png */; };
 		A0BD1BF81D6E64A80040A71D /* renato.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BD1BE91D6E64A80040A71D /* renato.png */; };
 		A0BD1BF91D6E64A80040A71D /* wallace.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BD1BEA1D6E64A80040A71D /* wallace.png */; };
+		A0BD1BFC1D6E6D150040A71D /* ContactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BFB1D6E6D150040A71D /* ContactDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		A0BD1BE81D6E64A80040A71D /* padrequemedo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padrequemedo.png; sourceTree = "<group>"; };
 		A0BD1BE91D6E64A80040A71D /* renato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = renato.png; sourceTree = "<group>"; };
 		A0BD1BEA1D6E64A80040A71D /* wallace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallace.png; sourceTree = "<group>"; };
+		A0BD1BFB1D6E6D150040A71D /* ContactDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDataManager.swift; sourceTree = "<group>"; };
 		FD486D4543EC5786D16F260A /* Pods-Neon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neon/Pods-Neon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 		A020980B1D6DCCE7003283AE /* Neon */ = {
 			isa = PBXGroup;
 			children = (
+				A0BD1BFA1D6E6CE30040A71D /* Data Managers */,
 				A0BD1BBA1D6DE3770040A71D /* Cells */,
 				A0BD1BB91D6DE3690040A71D /* Extensions */,
 				A0BD1BB81D6DE33B0040A71D /* Requests */,
@@ -261,6 +264,14 @@
 				A0BD1BEA1D6E64A80040A71D /* wallace.png */,
 			);
 			path = personagens;
+			sourceTree = "<group>";
+		};
+		A0BD1BFA1D6E6CE30040A71D /* Data Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A0BD1BFB1D6E6D150040A71D /* ContactDataManager.swift */,
+			);
+			name = "Data Managers";
 			sourceTree = "<group>";
 		};
 		E8F5A5863A3E011845429E71 /* Pods */ = {
@@ -495,6 +506,7 @@
 				A0BD1BD81D6E33DB0040A71D /* TransfersTableViewController.swift in Sources */,
 				A0BD1BC21D6E07710040A71D /* String+Ext.swift in Sources */,
 				A0BD1BD21D6E2A9D0040A71D /* TransfersRequest.swift in Sources */,
+				A0BD1BFC1D6E6D150040A71D /* ContactDataManager.swift in Sources */,
 				A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */,
 				A020980F1D6DCCE7003283AE /* HomeViewController.swift in Sources */,
 				A0BD1BC01D6DEB720040A71D /* Contact.swift in Sources */,

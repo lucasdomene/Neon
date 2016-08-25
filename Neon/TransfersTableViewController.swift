@@ -42,6 +42,7 @@ class TransfersTableViewController: UITableViewController {
                 // TREAT ERROR
             } else {
                 self.transfers = transfers!
+                self.tableView.reloadData()
             }
         })
     }
@@ -58,13 +59,22 @@ class TransfersTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as? ContactCell
-        //let contact = contacts[indexPath.row]
+        let transfer = transfers[indexPath.row]
+        let contact = ContactDataManager.sharedInstance.getContactWithID(String(transfer.clientID))
         
         guard cell != nil else {
             return ContactCell()
         }
         
-        //cell?.fill(contact)
+        guard contact != nil else {
+            print("Couldnt retrieve customer")
+            return cell!
+        }
+        
+        cell?.fill(contact!)
+        cell?.transferDateLabel.hidden = false
+        cell?.transferDateLabel.text = transfer.date
+        
         return cell!
     }
 }

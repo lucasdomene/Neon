@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="2124" y="-22"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Transfers Table View Controller-->
         <scene sceneID="5dX-Gs-MNW">
             <objects>
-                <tableViewController id="xST-8H-0nT" sceneMemberID="viewController">
+                <tableViewController id="xST-8H-0nT" customClass="TransfersTableViewController" customModule="Neon" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="o4S-pl-CyP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

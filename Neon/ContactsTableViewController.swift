@@ -38,7 +38,7 @@ class ContactsTableViewController: UITableViewController {
     // MARK: - Alert View
     
     func showTransferAlert(contact: Contact) {
-        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
+        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false, kCircleIconHeight: 50)
         let alertView = SCLAlertView(appearance: appearance)
         let textField = alertView.addTextField("R$ 0,00")
         
@@ -50,27 +50,29 @@ class ContactsTableViewController: UITableViewController {
         })
         alertView.addButton("CANCELAR", action: {})
         
-        
-        alertView.showSuccess(contact.fullName(), subTitle: contact.phone)
+        alertView.showInfo(contact.fullName(), subTitle: contact.phone, circleIconImage: UIImage(named: contact.photo!))
     }
     
     // MARK: - Data Fetchers
     
     func retrieveContacts() {
-        let firstContact = Contact(id: "0", firstName: "Lucas", surname: "Domene", phone: "(11)99528-1889")
-        let secondContact = Contact(id: "1", firstName: "Luís", surname: "Boça", phone: "(11)9956-2834", photo: "luisboca.png")
-        contacts.appendContentsOf([firstContact, secondContact, firstContact, firstContact])
+        contacts = ContactDataManager.sharedInstance.getContacts()
     }
     
     // MARK: - Send Money
     
     func sendMoney(contact: Contact, amount: String) {
-        SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token!, amount: amount.formatedMoneyAmount()) { isSuccess in
-            if isSuccess {
-                // TREAT SUCCESS
-            } else {
-                // TREAT FAILURE
+        let formattedAmout = amount.formatedMoneyAmount()
+        if formattedAmout > 0 {
+            SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token!, amount: formattedAmout) { isSuccess in
+                if isSuccess {
+                    SCLAlertView().showSuccess("Enviado!", subTitle: "Quantidade enviada: R$ \(formattedAmout)")
+                } else {
+                    SCLAlertView().showError("Ops!", subTitle: "Ocorreu um erro no envio! Tente novamente.")
+                }
             }
+        } else {
+            SCLAlertView().showWarning("Ops!", subTitle: "Não é possível enviar R$ 0,00!")
         }
     }
     
