@@ -38,8 +38,8 @@ class BaseTableViewController: UITableViewController {
     }
     
     func registerCell() {
-        let nib = UINib(nibName: "ContactCell", bundle: nil)
-        self.tableView.registerNib(nib, forCellReuseIdentifier: "ContactCell")
+        let nib = UINib(nibName: CONTACT_CELL, bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: CONTACT_CELL)
     }
     
     // MARK: - Activity Indicator

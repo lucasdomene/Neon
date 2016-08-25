@@ -10,7 +10,7 @@ import Foundation
 
 class SendMoneyRequest: BaseRequest {
     func makeRequest(contactID: Int, token: String, amount: Double, completion: (Bool) -> ()) {
-        super.makeRequest(.POST, path: SEND_MONEY_PATH, parameters: ["ClienteId": contactID, "token": token, "valor": amount]) { response in
+        super.makeRequest(.POST, path: SEND_MONEY_PATH, parameters: [CLIENT_ID_PARAMETER: contactID, TOKEN_PARAMETER: token, AMOUNT_PARAMETER: amount]) { response in
             guard let isSuccess = response.result.value as? Bool else {
                 completion(false)
                 return

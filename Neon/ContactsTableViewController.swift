@@ -25,7 +25,7 @@ class ContactsTableViewController: BaseTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "ENVIAR DINHEIRO"
+        navigationItem.title = SEND_MONEY_TITLE
     }
     
     // MARK: - Data Fetchers
@@ -42,14 +42,14 @@ class ContactsTableViewController: BaseTableViewController {
             startLoading()
             SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token!, amount: formattedAmout) { isSuccess in
                 if isSuccess {
-                    SCLAlertView().showSuccess("Enviado!", subTitle: "Quantidade enviada: R$ \(formattedAmout)")
+                    SCLAlertView().showSuccess(SENT, subTitle: "Quantidade enviada: R$ \(formattedAmout)")
                 } else {
-                    SCLAlertView().showError("Ops!", subTitle: "Ocorreu um erro no envio! Tente novamente.")
+                    SCLAlertView().showError(WARNING, subTitle: SEND_MONEY_ERROR)
                 }
                 self.stopLoading()
             }
         } else {
-            SCLAlertView().showWarning("Ops!", subTitle: "Não é possível enviar R$ 0,00!")
+            SCLAlertView().showWarning(WARNING, subTitle: NO_VALUE_ERROR)
         }
     }
     
@@ -64,7 +64,7 @@ class ContactsTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as? ContactCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CONTACT_CELL, forIndexPath: indexPath) as? ContactCell
         let contact = contacts[indexPath.row]
         
         guard cell != nil else {

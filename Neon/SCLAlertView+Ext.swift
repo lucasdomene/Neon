@@ -17,14 +17,14 @@ extension SCLAlertView {
         let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
         let retryAlert = SCLAlertView(appearance: appearance)
         retryAlert.addButton("SIM", action: { retryMethod() })
-        retryAlert.addButton("CANCELAR", action: {})
-        retryAlert.showError("Ops!", subTitle: "Não foi possível se conectar. Tentar novamente?")
+        retryAlert.addButton(CANCEL, action: {})
+        retryAlert.showError(WARNING, subTitle: CONNECTION_ERROR)
     }
     
     func showConnectedAlert() {
         let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
         let alertView = SCLAlertView(appearance: appearance)
-        alertView.showSuccess("Conectado!", subTitle: "", duration: 1)
+        alertView.showSuccess(CONNECTED, subTitle: "", duration: 1)
     }
     
     func showTransferAlert(contact: Contact, sendMoneyAction: (String) -> ()) {
@@ -35,10 +35,18 @@ extension SCLAlertView {
         textField.keyboardType = .DecimalPad
         textField.text = "R$ " + textField.text!
         
-        alertView.addButton("ENVIAR", action: { sendMoneyAction(textField.text ?? "0") })
-        alertView.addButton("CANCELAR", action: {})
+        alertView.addButton(SEND, action: { sendMoneyAction(textField.text ?? "0") })
+        alertView.addButton(CANCEL, action: {})
         
         alertView.showInfo(contact.fullName(), subTitle: contact.phone, circleIconImage: contact.photoImage())
     }
     
+    func showTransferDetails(transfer: Transfer, contact: Contact) {
+        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false, kCircleIconHeight: 50)
+        let alertView = SCLAlertView(appearance: appearance)
+        
+        alertView.addButton("OK", action: {})
+        let detailsString = "\(contact.phone)\n\nValor transferido: R$ \(transfer.amount)"
+        alertView.showInfo(contact.fullName(), subTitle: detailsString, circleIconImage: contact.photoImage())
+    }
 }

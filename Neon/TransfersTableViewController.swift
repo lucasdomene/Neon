@@ -25,7 +25,7 @@ class TransfersTableViewController: BaseTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "HISTÓRICO DE ENVIOS"
+        navigationItem.title = TRANSFERS_TITLE
     }
     
     // MARK: - Data Fetchers
@@ -34,7 +34,9 @@ class TransfersTableViewController: BaseTableViewController {
         startLoading()
         TransfersRequest().makeRequest(appDelegate.token!, completion: { transfers, error in
             if error != nil {
-                self.showRetryAlert()
+                SCLAlertView().showRetryAlert(TRANSFERS_ERROR, retryMethod: {
+                    self.fetchTransfers()
+                })
             } else {
                 self.transfers = transfers!
                 self.transfers = self.transfers.reverse()
@@ -42,17 +44,6 @@ class TransfersTableViewController: BaseTableViewController {
             }
             self.stopLoading()
         })
-    }
-    
-    // MARK: - Alerts
-    
-    func showTransferDetails(transfer: Transfer, contact: Contact) {
-        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false, kCircleIconHeight: 50)
-        let alertView = SCLAlertView(appearance: appearance)
-        
-        alertView.addButton("OK", action: {})
-        let detailsString = "\(contact.phone)\n\nValor transferido: R$ \(transfer.amount)"
-        alertView.showInfo(contact.fullName(), subTitle: detailsString, circleIconImage: contact.photoImage())
     }
     
     // MARK: - Table View Data Source
@@ -66,7 +57,7 @@ class TransfersTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as? ContactCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CONTACT_CELL, forIndexPath: indexPath) as? ContactCell
         let transfer = transfers[indexPath.row]
         let contact = ContactDataManager.sharedInstance.getContactWithID(transfer.clientID)
         
@@ -75,7 +66,6 @@ class TransfersTableViewController: BaseTableViewController {
         }
         
         guard contact != nil else {
-            print("Couldnt retrieve customer")
             return cell!
         }
         
@@ -92,19 +82,9 @@ class TransfersTableViewController: BaseTableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let transfer = transfers[indexPath.row]
         if let contact = ContactDataManager.sharedInstance.getContactWithID(transfer.clientID) {
-            showTransferDetails(transfer, contact: contact)
+            SCLAlertView().showTransferDetails(transfer, contact: contact)
         } else {
-            SCLAlertView().showError("Ops!", subTitle: "Ocorreu um erro! Tente novamente.")
+            SCLAlertView().showError(WARNING, subTitle: UNKNOWN_ERROR)
         }
-    }
-    
-    // MARK: - Alerts
-    
-    func showRetryAlert() {
-        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
-        let retryAlert = SCLAlertView(appearance: appearance)
-        retryAlert.addButton("SIM", action: { self.fetchTransfers() })
-        retryAlert.addButton("CANCELAR", action: {})
-        retryAlert.showError("Ops!", subTitle: "Não foi possível recuperar as transferências. Tentar novamente?")
     }
 }

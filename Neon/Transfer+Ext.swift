@@ -11,11 +11,11 @@ import Foundation
 extension Transfer {
     
     convenience init(json: JSONDictionary) throws {
-        guard let id = json["Id"] as? Int,
-            clientID = json["ClienteId"] as? Int,
-            amount = json["Valor"] as? Double,
-            token = json["Token"] as? String,
-            date = json["Data"] as? String else {
+        guard let id = json[ID_KEY] as? Int,
+            clientID = json[CLIENT_ID_KEY] as? Int,
+            amount = json[AMOUNT_KEY] as? Double,
+            token = json[TOKEN_KEY] as? String,
+            date = json[DATE_KEY] as? String else {
                 throw JSONMappingError.KeyNotFound
         }
         

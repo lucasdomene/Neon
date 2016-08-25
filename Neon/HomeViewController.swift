@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
             if error != nil {
                 self.disableButtons()
                 self.stopLoading()
-                SCLAlertView().showRetryAlert("Não foi possível se conectar. Tentar novamente?", retryMethod: {
+                SCLAlertView().showRetryAlert(CONNECTION_ERROR, retryMethod: {
                     self.generateToken()
                 })
             } else {
