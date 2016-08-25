@@ -20,7 +20,7 @@ class Contact {
     
     // MARK: - Initializer
     
-    init(id: String, firstName: String, surname: String, phone: String, photo: String = "") {
+    init(id: String, firstName: String, surname: String, phone: String, photo: String? = nil) {
         self.id = id
         self.firstName = firstName
         self.surname = surname

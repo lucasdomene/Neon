@@ -20,7 +20,7 @@ class ContactsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        registerCell()
         retrieveContacts()
         self.tableView.reloadData()
     }
@@ -28,6 +28,11 @@ class ContactsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func registerCell() {
+        let nib = UINib(nibName: "ContactCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "ContactCell")
     }
     
     // MARK: - Alert View
@@ -53,7 +58,8 @@ class ContactsTableViewController: UITableViewController {
     
     func retrieveContacts() {
         let firstContact = Contact(id: "0", firstName: "Lucas", surname: "Domene", phone: "(11)99528-1889")
-        contacts.appendContentsOf([firstContact, firstContact, firstContact, firstContact])
+        let secondContact = Contact(id: "1", firstName: "Luís", surname: "Boça", phone: "(11)9956-2834", photo: "luisboca.png")
+        contacts.appendContentsOf([firstContact, secondContact, firstContact, firstContact])
     }
     
     // MARK: - Send Money

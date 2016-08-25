@@ -16,11 +16,14 @@ class ContactCell: UITableViewCell {
     @IBOutlet weak var contactNameLabel: UILabel!
     @IBOutlet weak var contactPhoneLabel: UILabel!
     @IBOutlet weak var contactNameInitials: UILabel!
+    @IBOutlet weak var transferDateLabel: UILabel!
     
     // MARK: - Cell Configuration
     
     func configureContactImageView() {
         contactImageView.layer.cornerRadius = contactImageView.bounds.size.width / 2
+        contactImageView.layer.borderWidth = 1.0
+        contactImageView.layer.borderColor = UIColor.blackColor().CGColor
         contactImageView.layer.masksToBounds = true
     }
     
@@ -30,7 +33,12 @@ class ContactCell: UITableViewCell {
         configureContactImageView()
         contactNameLabel.text = contact.fullName()
         contactPhoneLabel.text = contact.phone
-        setNameInitialsToContactViewPhoto(contact)
+        
+        if contact.photo == nil {
+            setNameInitialsToContactViewPhoto(contact)
+        } else {
+            contactImageView.image = UIImage(named: contact.photo!)
+        }
     }
     
     func setNameInitialsToContactViewPhoto(contact: Contact) {
