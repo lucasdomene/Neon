@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="80f-Tl-JjG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me.png" translatesAutoresizingMaskIntoConstraints="NO" id="80f-Tl-JjG">
                                 <rect key="frame" x="230" y="70" width="140" height="140"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" constant="21" id="yth-oU-C28"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lucas.firmo@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amS-ha-kgA">
@@ -42,33 +42,51 @@
                                     <constraint firstAttribute="height" constant="21" id="Y1Y-Ke-sQ8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmG-Io-Bzv">
-                                <rect key="frame" x="237" y="389" width="127" height="30"/>
+                                <rect key="frame" x="190.5" y="389" width="220" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="7SC-Rj-sY1"/>
-                                    <constraint firstAttribute="height" constant="30" id="kPt-kP-CUA"/>
+                                    <constraint firstAttribute="width" constant="220" id="7SC-Rj-sY1"/>
+                                    <constraint firstAttribute="height" constant="45" id="kPt-kP-CUA"/>
                                 </constraints>
-                                <state key="normal" title="ENVIAR DINHEIRO"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="ENVIAR DINHEIRO">
+                                    <color key="titleColor" red="0.031372549020000001" green="0.92941176469999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="ZLe-Ep-daT" kind="show" id="Cmd-4Y-eCE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stb-DA-xCs">
-                                <rect key="frame" x="220" y="427" width="161" height="30"/>
+                                <rect key="frame" x="190.5" y="442" width="220" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1E9-lM-poD"/>
-                                    <constraint firstAttribute="width" constant="161" id="i6F-3S-Ado"/>
+                                    <constraint firstAttribute="height" constant="45" id="1E9-lM-poD"/>
+                                    <constraint firstAttribute="width" constant="220" id="i6F-3S-Ado"/>
                                 </constraints>
-                                <state key="normal" title="HISTÓRICO DE ENVIOS"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="HISTÓRICO DE ENVIOS">
+                                    <color key="titleColor" red="0.031372549020000001" green="0.92941176469999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="xST-8H-0nT" kind="show" id="zXy-53-IBJ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.031372549020000001" green="0.92941176469999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Stb-DA-xCs" firstAttribute="centerX" secondItem="AmG-Io-Bzv" secondAttribute="centerX" id="3VL-yv-POc"/>
                             <constraint firstItem="Stb-DA-xCs" firstAttribute="top" secondItem="AmG-Io-Bzv" secondAttribute="bottom" constant="8" id="7ZB-OM-Wme"/>
@@ -100,10 +118,11 @@
         <scene sceneID="xal-Nq-9Tf">
             <objects>
                 <tableViewController id="ZLe-Ep-daT" customClass="ContactsTableViewController" customModule="Neon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="X5O-Fg-RaO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="X5O-Fg-RaO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.5490196078431373" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="ZLe-Ep-daT" id="Mrw-6d-3ia"/>
                             <outlet property="delegate" destination="ZLe-Ep-daT" id="kbn-Ly-68k"/>
@@ -119,10 +138,11 @@
         <scene sceneID="5dX-Gs-MNW">
             <objects>
                 <tableViewController id="xST-8H-0nT" customClass="TransfersTableViewController" customModule="Neon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="o4S-pl-CyP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="o4S-pl-CyP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.54901960780000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="xST-8H-0nT" id="xWI-yN-fg7"/>
                             <outlet property="delegate" destination="xST-8H-0nT" id="bcu-sw-hBg"/>
@@ -157,4 +177,7 @@
             <point key="canvasLocation" x="462" y="399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="me.png" width="579" height="579"/>
+    </resources>
 </document>

@@ -22,9 +22,13 @@ class ContactCell: UITableViewCell {
     
     func configureContactImageView() {
         contactImageView.layer.cornerRadius = contactImageView.bounds.size.width / 2
-        contactImageView.layer.borderWidth = 1.0
-        contactImageView.layer.borderColor = UIColor.blackColor().CGColor
+        contactImageView.layer.borderWidth = 3.0
+        contactImageView.layer.borderColor = CUSTOM_BLUE_COLOR.CGColor
         contactImageView.layer.masksToBounds = true
+        
+        let colorView = UIView()
+        colorView.backgroundColor = CUSTOM_BLUE_COLOR
+        selectedBackgroundView = colorView
     }
     
     func clean() {
@@ -56,7 +60,7 @@ class ContactCell: UITableViewCell {
             contactNameInitials.text = initials
             contactNameInitials.hidden = false
         } else {
-            contactImageView.backgroundColor = UIColor.lightGrayColor()
+            contactImageView.backgroundColor = CUSTOM_BLUE_COLOR
         }
     }
 }

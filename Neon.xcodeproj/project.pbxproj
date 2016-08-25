@@ -15,6 +15,7 @@
 		A02098141D6DCCE7003283AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02098131D6DCCE7003283AE /* Assets.xcassets */; };
 		A02098171D6DCCE7003283AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02098151D6DCCE7003283AE /* LaunchScreen.storyboard */; };
 		A02098221D6DCCE7003283AE /* NeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02098211D6DCCE7003283AE /* NeonTests.swift */; };
+		A05A76AD1D6F2E7D0092B725 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = A05A76AC1D6F2E7D0092B725 /* me.png */; };
 		A0BD1BBC1D6DE8580040A71D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */; };
 		A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */; };
 		A0BD1BC01D6DEB720040A71D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBF1D6DEB720040A71D /* Contact.swift */; };
@@ -74,6 +75,7 @@
 		A020981D1D6DCCE7003283AE /* NeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02098211D6DCCE7003283AE /* NeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonTests.swift; sourceTree = "<group>"; };
 		A02098231D6DCCE7003283AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05A76AC1D6F2E7D0092B725 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		A0BD1BBF1D6DEB720040A71D /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		A0BD1BDB1D6E64A80040A71D /* personagens */ = {
 			isa = PBXGroup;
 			children = (
+				A05A76AC1D6F2E7D0092B725 /* me.png */,
 				A0BD1BDC1D6E64A80040A71D /* charlinho.png */,
 				A0BD1BDD1D6E64A80040A71D /* claudioricardo.png */,
 				A0BD1BDE1D6E64A80040A71D /* donamaxima.png */,
@@ -378,6 +381,7 @@
 				A0BD1BEF1D6E64A80040A71D /* hermes.png in Resources */,
 				A0BD1BF61D6E64A80040A71D /* luisboca.png in Resources */,
 				A0BD1BEB1D6E64A80040A71D /* charlinho.png in Resources */,
+				A05A76AD1D6F2E7D0092B725 /* me.png in Resources */,
 				A0BD1BF01D6E64A80040A71D /* jaqueline.png in Resources */,
 				A0BD1BF91D6E64A80040A71D /* wallace.png in Resources */,
 				A0BD1BD01D6E26660040A71D /* ContactCell.xib in Resources */,

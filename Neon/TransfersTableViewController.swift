@@ -78,4 +78,11 @@ class TransfersTableViewController: UITableViewController {
         
         return cell!
     }
+    
+    // MARK: - Table View Delegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+    }
 }

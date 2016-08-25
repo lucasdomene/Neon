@@ -20,3 +20,4 @@ public typealias JSONDictionary = [String : AnyObject]
 
 // MARK: - Custom Colors
 let CUSTOM_GREEN_COLOR = UIColor(red: 8.0/255.0, green: 237.0/255.0, blue: 153.0/255.0, alpha: 1)
+let CUSTOM_BLUE_COLOR = UIColor(red: 0, green: 140.0/255.0, blue: 213.0/255.0, alpha: 1)
