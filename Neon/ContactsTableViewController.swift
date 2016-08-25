@@ -63,7 +63,7 @@ class ContactsTableViewController: UITableViewController {
     // MARK: - Send Money
     
     func sendMoney(contact: Contact, amount: String) {
-        let formattedAmout = amount.formatedMoneyAmount()
+        let formattedAmout = amount.formattedMoneyAmount()
         if formattedAmout > 0 {
             SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token!, amount: formattedAmout) { isSuccess in
                 if isSuccess {

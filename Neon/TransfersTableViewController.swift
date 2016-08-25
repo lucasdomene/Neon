@@ -86,7 +86,7 @@ class TransfersTableViewController: UITableViewController {
         
         cell?.fill(contact!)
         cell?.transferDateLabel.hidden = false
-        cell?.transferDateLabel.text = transfer.date
+        cell?.transferDateLabel.text = transfer.date.formattedDate()
         
         return cell!
     }
