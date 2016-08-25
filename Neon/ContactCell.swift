@@ -52,12 +52,11 @@ class ContactCell: UITableViewCell {
     }
     
     func setNameInitialsToContactViewPhoto(contact: Contact) {
-        if let firstLetter = contact.firstName.characters.first, lastLetter = contact.surname.characters.first {
-            let nameInitials = "\(firstLetter)\(lastLetter)".uppercaseString
-            contactNameInitials.text = nameInitials
+        if let initials = contact.nameInitials() {
+            contactNameInitials.text = initials
             contactNameInitials.hidden = false
         } else {
-            // TREAT NO PHOTO AND ERROR GETTING INITIALS
+            contactImageView.backgroundColor = UIColor.lightGrayColor()
         }
     }
 }

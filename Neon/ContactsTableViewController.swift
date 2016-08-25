@@ -22,12 +22,13 @@ class ContactsTableViewController: UITableViewController {
         super.viewDidLoad()
         registerCell()
         retrieveContacts()
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.title = "ENVIAR DINHEIRO"
     }
     
     func registerCell() {
@@ -50,7 +51,7 @@ class ContactsTableViewController: UITableViewController {
         })
         alertView.addButton("CANCELAR", action: {})
         
-        alertView.showInfo(contact.fullName(), subTitle: contact.phone, circleIconImage: UIImage(named: contact.photo!))
+        alertView.showInfo(contact.fullName(), subTitle: contact.phone, circleIconImage: contact.photoImage())
     }
     
     // MARK: - Data Fetchers
@@ -104,4 +105,5 @@ class ContactsTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         showTransferAlert(contacts[indexPath.row])
     }
+    
 }

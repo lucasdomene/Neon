@@ -27,6 +27,7 @@ class TransfersTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.title = "HISTÓRICO DE ENVIOS"
     }
     
     func registerCell() {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Requests
 let BASE_URL = "http://processoseletivoneon.azurewebsites.net"
@@ -16,3 +17,6 @@ let GET_TRANSFERS_PATH = "/GetTransfers"
 
 // MARK: - Typealias
 public typealias JSONDictionary = [String : AnyObject]
+
+// MARK: - Custom Colors
+let CUSTOM_GREEN_COLOR = UIColor(red: 8.0/255.0, green: 237.0/255.0, blue: 153.0/255.0, alpha: 1)

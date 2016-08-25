@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Contact {
     
@@ -33,4 +34,30 @@ class Contact {
     func fullName() -> String {
         return firstName + " " + surname
     }
+    
+    func photoImage() -> UIImage {
+        if photo == nil || photo == "" {
+            return imageWithNameInitials()
+        }
+        return UIImage(named: photo!) ?? UIImage()
+    }
+    
+    func nameInitials() -> String? {
+        if let firstLetter = firstName.characters.first, lastLetter = surname.characters.first {
+            return "\(firstLetter)\(lastLetter)".uppercaseString
+        }
+        return nil
+    }
+    
+    func imageWithNameInitials() -> UIImage {
+        let label = UILabel(frame: CGRectMake(0, 0, 70, 70))
+        label.textAlignment = .Center
+        label.font = UIFont(name: "Avenir-Heavy", size: 40)
+        label.textColor = UIColor.whiteColor()
+        label.text = nameInitials()
+        UIGraphicsBeginImageContext(label.bounds.size)
+        label.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    
 }
