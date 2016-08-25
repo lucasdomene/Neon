@@ -58,10 +58,11 @@ class HomeViewController: UIViewController {
     // MARK: - Data Fetchers
     
     func generateToken() {
+        self.disableButtons()
         startLoading()
         GenerateTokenRequest().makeRequest(userNameLabel.text!, emaill: userEmailLabel.text!) { token, error in
             if error != nil {
-                self.disableButtons()
+                self.enableButtons()
                 self.stopLoading()
                 SCLAlertView().showRetryAlert(error! == Errors.NoConnection ? INTERNET_ERROR : CONNECTION_ERROR, retryMethod: {
                     self.generateToken()

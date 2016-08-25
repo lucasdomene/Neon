@@ -32,7 +32,7 @@ class TransfersTableViewController: BaseTableViewController {
     
     func fetchTransfers() {
         startLoading()
-        TransfersRequest().makeRequest(appDelegate.token!, completion: { transfers, error in
+        TransfersRequest().makeRequest(appDelegate.token ?? "", completion: { transfers, error in
             if error != nil {
                 SCLAlertView().showRetryAlert(error! == Errors.NoConnection ? INTERNET_ERROR : TRANSFERS_ERROR, retryMethod: {
                     self.fetchTransfers()

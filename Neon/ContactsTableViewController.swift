@@ -40,7 +40,7 @@ class ContactsTableViewController: BaseTableViewController {
         let formattedAmout = amount.formattedMoneyAmount()
         if formattedAmout > 0 {
             startLoading()
-            SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token!, amount: formattedAmout) { isSuccess in
+            SendMoneyRequest().makeRequest(contact.id, token: appDelegate.token ?? "", amount: formattedAmout) { isSuccess in
                 if isSuccess {
                     SCLAlertView().showSuccess(SENT, subTitle: "Quantidade enviada: R$ \(formattedAmout)")
                 } else {
