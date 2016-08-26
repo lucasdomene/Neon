@@ -30,12 +30,20 @@ class ContactsTableViewController: BaseTableViewController {
     
     // MARK: - Data Fetchers
     
+    /**
+     Retrieve contacts from app bundle.
+     */
     func retrieveContacts() {
         contacts = ContactDataManager.sharedInstance.getContacts()
     }
     
     // MARK: - Send Money
     
+    /**
+     Send money to contact.
+     - parameter contact: the contact to send money to.
+     - parameter amount: the money amount to send.
+     */
     func sendMoney(contact: Contact, amount: String) {
         let formattedAmout = amount.formattedMoneyAmount()
         if formattedAmout > 0 {

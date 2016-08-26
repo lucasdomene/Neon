@@ -19,6 +19,10 @@ class ContactDataManager {
     
     // MARK: - Data Fetchers
     
+    /**
+     Get all contacts.
+     returns: a array of contacts.
+     */
     func getContacts() -> [Contact] {
         if contacts != nil {
             return contacts!
@@ -32,6 +36,11 @@ class ContactDataManager {
         return contacts!
     }
     
+    /**
+     Get a contact given an ID.
+     - parameter id: the contact ID.
+     - returns: a contact if it exists.
+     */
     func getContactWithID(id: Int) -> Contact? {
         for contact in getContacts() {
             if contact.id == id {
@@ -41,6 +50,10 @@ class ContactDataManager {
         return nil
     }
     
+    /**
+     Retrieve the contacts from the plist.
+     - returns: a array with all contacts dictionaries.
+     */
     func retrieveContactsFromPlist() -> NSArray? {
         let contactsArray: NSArray?
         if let path = NSBundle.mainBundle().pathForResource("Contacts", ofType: "plist") {
@@ -51,6 +64,10 @@ class ContactDataManager {
         }
     }
     
+    /**
+     Create contacts objects from dictionaries from the plist.
+     - parameter contactsArray: the array with all contacts dictionaries.
+     */
     func createContactsFromArray(contactsArray: NSArray) {
         for contactDictionary in contactsArray {
             let contact = Contact(id: Int(contactDictionary.objectForKey("id") as! String)!,

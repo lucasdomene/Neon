@@ -31,10 +31,19 @@ class Contact {
     
     // MARK: - Helper Methods
     
+    
+    /**
+     Create the full name of the contact.
+     - returns: a String with the full contact name.
+     */
     func fullName() -> String {
         return firstName + " " + surname
     }
     
+    /**
+     Create the image of the contact.
+     - returns: a image of the contact. If the contact has no photo it will create a image from the contact's name initial letters.
+     */
     func photoImage() -> UIImage {
         if photo == nil || photo == "" {
             return imageWithNameInitials()
@@ -42,6 +51,10 @@ class Contact {
         return UIImage(named: photo!) ?? UIImage()
     }
     
+    /**
+     Create the contact's name initial letters.
+     - returns: a string with the initial letters.
+     */
     func nameInitials() -> String? {
         if let firstLetter = firstName.characters.first, lastLetter = surname.characters.first {
             return "\(firstLetter)\(lastLetter)".uppercaseString
@@ -49,6 +62,10 @@ class Contact {
         return nil
     }
     
+    /**
+     Create a image with the initial letters.
+     - returns: a image with the initial letters.
+     */
     func imageWithNameInitials() -> UIImage {
         let label = UILabel(frame: CGRectMake(0, 0, 70, 70))
         label.textAlignment = .Center

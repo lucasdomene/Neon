@@ -9,6 +9,11 @@
 import Foundation
 
 class TransfersRequest: BaseRequest {
+    /**
+     Request a token to communicate to de API.
+     - parameter token: the user token.
+     - parameter completion: the completion method that receives a array of transfers or an error.
+     */
     func makeRequest(token: String, completion: ([Transfer]?, Errors?) -> ()) {
         super.makeRequest(.GET, path: GET_TRANSFERS_PATH, parameters: ["token": token]) { response in
             if let transfersJSON = response.result.value as? [JSONDictionary] {

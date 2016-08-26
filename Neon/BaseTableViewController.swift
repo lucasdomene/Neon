@@ -31,6 +31,9 @@ class BaseTableViewController: UITableViewController {
     
     // MARK: - Instance Methods
     
+    /**
+     Configure the initial state of the activity indicator.
+     */
     func configureActivityIndicator() {
         activityIndicator.backgroundColor = CUSTOM_GREEN_COLOR
         activityIndicator.center = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2)

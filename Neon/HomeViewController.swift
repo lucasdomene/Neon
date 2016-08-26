@@ -45,6 +45,9 @@ class HomeViewController: UIViewController {
     
     // MARK: - Instance Methods
     
+    /**
+     Configure the initial state of the user imageView.
+     */
     func configureImageView() {
         userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
         userImageView.layer.borderColor = CUSTOM_BLUE_COLOR.CGColor
@@ -52,14 +55,37 @@ class HomeViewController: UIViewController {
         userImageView.layer.masksToBounds = true
     }
     
+    /**
+     Configure a background view to be used when loading the view.
+     */
     func configureShadowView() {
         shadowView = UIView(frame: view.frame)
         shadowView.backgroundColor = UIColor.blackColor()
         shadowView.alpha = 0.5
     }
     
+    /**
+    Draw a circle around the user photo and a line to the first button.
+     */
+    func drawCircle() {
+        let circlePath = UIBezierPath(ovalInRect: CGRectMake(userImageView.center.x - userImageView.bounds.size.width * 1.15, userImageView.center.y - userImageView.bounds.size.height * 1.15, userImageView.bounds.size.width * 2.3, userImageView.bounds.size.height * 2.3))
+        circlePath.moveToPoint(CGPoint(x: userImageView.center.x, y: userImageView.center.y * 2.35))
+        circlePath.addLineToPoint(CGPoint(x: userImageView.center.x, y: userImageView.center.y * 2.35 - 90))
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.CGPath
+        shapeLayer.fillColor = UIColor.clearColor().CGColor
+        shapeLayer.strokeColor = UIColor.whiteColor().CGColor
+        shapeLayer.lineWidth = 1.0
+        
+        view.layer.addSublayer(shapeLayer)
+    }
+    
     // MARK: - Data Fetchers
     
+    /**
+     Get a token to be used on API calls.
+     */
     func generateToken() {
         self.disableButtons()
         startLoading()
@@ -81,6 +107,9 @@ class HomeViewController: UIViewController {
     
     // MARK: - Activity Indicator
     
+    /**
+     Configure the view to show loading state
+     */
     func startLoading() {
         view.addSubview(shadowView)
         view.bringSubviewToFront(activityIndicator)
@@ -90,6 +119,9 @@ class HomeViewController: UIViewController {
         connectingLabel.hidden = false
     }
     
+    /**
+     Configure the view to hide loading state
+     */
     func stopLoading() {
         shadowView.removeFromSuperview()
         activityIndicator.stopAnimating()
@@ -98,28 +130,21 @@ class HomeViewController: UIViewController {
     
     // MARK: - Buttons 
     
+    /**
+     Enable view buttons.
+     */
     func enableButtons() {
         self.transfersHistoryButton.enabled = true
         self.sendMoneyButton.enabled = true
     }
     
+    /**
+     Disable view buttons.
+     */
     func disableButtons() {
         self.transfersHistoryButton.enabled = false
         self.sendMoneyButton.enabled = false
     }
     
-    func drawCircle() {
-        let circlePath = UIBezierPath(ovalInRect: CGRectMake(userImageView.center.x - userImageView.bounds.size.width * 1.15, userImageView.center.y - userImageView.bounds.size.height * 1.15, userImageView.bounds.size.width * 2.3, userImageView.bounds.size.height * 2.3))
-        circlePath.moveToPoint(CGPoint(x: userImageView.center.x, y: userImageView.center.y * 2.35))
-        circlePath.addLineToPoint(CGPoint(x: userImageView.center.x, y: userImageView.center.y * 2.35 - 90))
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.CGPath
-        shapeLayer.fillColor = UIColor.clearColor().CGColor
-        shapeLayer.strokeColor = UIColor.whiteColor().CGColor
-        shapeLayer.lineWidth = 1.0
-        
-        view.layer.addSublayer(shapeLayer)
-    }
 }
 

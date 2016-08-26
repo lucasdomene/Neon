@@ -10,11 +10,19 @@ import Foundation
 
 extension String {
     
+    /**
+     Formats the amount value.
+     - returns: a formatted money value.
+     */
     func formattedMoneyAmount() -> Double {
         let valueString = self.stringByReplacingOccurrencesOfString("R$ ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         return Double(valueString) ?? 0.0
     }
     
+    /**
+     Formats the date.
+     - returns: the formatted date.
+     */
     func formattedDate() -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"

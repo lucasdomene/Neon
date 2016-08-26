@@ -22,6 +22,11 @@ extension Transfer {
         self.init(id: id, clientID: clientID, amount: amount, token: token, date: date)
     }
     
+    /**
+     Create a array of transfers.
+     - parameter jsonArray: a json array of transfers.
+     - returns: a tuple containing an array of transfers and a error, if there was any.
+     */
     class func massCreation(jsonArray: [JSONDictionary]) -> ([Transfer]?, Errors?) {
         var transfers = [Transfer]()
         for jsonDict in jsonArray {

@@ -29,7 +29,9 @@ class TransfersTableViewController: BaseTableViewController {
     }
     
     // MARK: - Data Fetchers
-    
+    /**
+     Fetch all transfers made.
+     */
     func fetchTransfers() {
         startLoading()
         TransfersRequest().makeRequest(appDelegate.token ?? "", completion: { transfers, error in
