@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucas Domene" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQK-Ee-owz">
-                                <rect key="frame" x="243" y="218" width="115" height="21"/>
+                                <rect key="frame" x="243" y="238" width="115" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="Uyd-Q7-Zhg"/>
                                     <constraint firstAttribute="height" constant="21" id="yth-oU-C28"/>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lucas.firmo@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amS-ha-kgA">
-                                <rect key="frame" x="223" y="238" width="154.5" height="21"/>
+                                <rect key="frame" x="223" y="258" width="154.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154.5" id="M9w-nJ-JFj"/>
                                     <constraint firstAttribute="height" constant="21" id="Y1Y-Ke-sQ8"/>
@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmG-Io-Bzv">
-                                <rect key="frame" x="190" y="389" width="220" height="45"/>
+                                <rect key="frame" x="190" y="399" width="220" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="7SC-Rj-sY1"/>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stb-DA-xCs">
-                                <rect key="frame" x="190" y="442" width="220" height="45"/>
+                                <rect key="frame" x="190" y="452" width="220" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1E9-lM-poD"/>
@@ -98,11 +98,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me.png" translatesAutoresizingMaskIntoConstraints="NO" id="80f-Tl-JjG">
-                                <rect key="frame" x="230" y="70" width="140" height="140"/>
+                                <rect key="frame" x="240" y="110" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="AJi-8P-WN3"/>
-                                    <constraint firstAttribute="width" constant="140" id="rFZ-rc-L9H"/>
+                                    <constraint firstAttribute="height" constant="120" id="AJi-8P-WN3"/>
+                                    <constraint firstAttribute="width" constant="120" id="rFZ-rc-L9H"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -111,9 +111,9 @@
                             <constraint firstItem="J3H-Bi-bk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1ak-fp-3p0"/>
                             <constraint firstItem="Stb-DA-xCs" firstAttribute="centerX" secondItem="AmG-Io-Bzv" secondAttribute="centerX" id="3VL-yv-POc"/>
                             <constraint firstItem="Stb-DA-xCs" firstAttribute="top" secondItem="AmG-Io-Bzv" secondAttribute="bottom" constant="8" id="7ZB-OM-Wme"/>
-                            <constraint firstItem="80f-Tl-JjG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="9ib-e7-77g"/>
+                            <constraint firstItem="80f-Tl-JjG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="9ib-e7-77g"/>
                             <constraint firstItem="itq-XM-Udo" firstAttribute="centerX" secondItem="J3H-Bi-bk5" secondAttribute="centerX" id="AKx-Lp-x35"/>
-                            <constraint firstItem="AmG-Io-Bzv" firstAttribute="top" secondItem="amS-ha-kgA" secondAttribute="bottom" constant="130" id="AbW-A6-pqk"/>
+                            <constraint firstItem="AmG-Io-Bzv" firstAttribute="top" secondItem="amS-ha-kgA" secondAttribute="bottom" constant="120" id="AbW-A6-pqk"/>
                             <constraint firstItem="yQK-Ee-owz" firstAttribute="centerX" secondItem="80f-Tl-JjG" secondAttribute="centerX" id="ICN-d3-3PD"/>
                             <constraint firstItem="amS-ha-kgA" firstAttribute="centerX" secondItem="yQK-Ee-owz" secondAttribute="centerX" id="IE3-SB-90Q"/>
                             <constraint firstItem="amS-ha-kgA" firstAttribute="top" secondItem="80f-Tl-JjG" secondAttribute="bottom" constant="28" id="RFk-PR-Vvg"/>
