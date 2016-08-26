@@ -39,6 +39,9 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
+    override func viewDidLayoutSubviews() {
+        drawCircle()
+    }
     
     // MARK: - Instance Methods
     
@@ -103,6 +106,20 @@ class HomeViewController: UIViewController {
     func disableButtons() {
         self.transfersHistoryButton.enabled = false
         self.sendMoneyButton.enabled = false
+    }
+    
+    func drawCircle() {
+        let circlePath = UIBezierPath(ovalInRect: CGRectMake(userImageView.center.x - userImageView.bounds.size.width * 1.15, userImageView.center.y - userImageView.bounds.size.height * 1.15, userImageView.bounds.size.width * 2.3, userImageView.bounds.size.height * 2.3))
+        circlePath.moveToPoint(CGPoint(x: userImageView.center.x, y: userImageView.center.y * 2.35))
+        circlePath.addLineToPoint(CGPoint(x: userImageView.center.x, y: userImageView.center.y * 2.35 - 90))
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.CGPath
+        shapeLayer.fillColor = UIColor.clearColor().CGColor
+        shapeLayer.strokeColor = UIColor.whiteColor().CGColor
+        shapeLayer.lineWidth = 1.0
+        
+        view.layer.addSublayer(shapeLayer)
     }
 }
 
