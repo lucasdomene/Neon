@@ -104,9 +104,6 @@
                                     <constraint firstAttribute="height" constant="140" id="AJi-8P-WN3"/>
                                     <constraint firstAttribute="width" constant="140" id="rFZ-rc-L9H"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.031372549020000001" green="0.92941176469999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>

@@ -14,9 +14,12 @@
 		A02098121D6DCCE7003283AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02098101D6DCCE7003283AE /* Main.storyboard */; };
 		A02098141D6DCCE7003283AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02098131D6DCCE7003283AE /* Assets.xcassets */; };
 		A02098171D6DCCE7003283AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02098151D6DCCE7003283AE /* LaunchScreen.storyboard */; };
-		A02098221D6DCCE7003283AE /* NeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02098211D6DCCE7003283AE /* NeonTests.swift */; };
 		A040F74D1D6F95E90083325B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040F74C1D6F95E90083325B /* BaseTableViewController.swift */; };
 		A040F74F1D6F99AC0083325B /* SCLAlertView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040F74E1D6F99AC0083325B /* SCLAlertView+Ext.swift */; };
+		A040F7511D6FB6360083325B /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040F7501D6FB6360083325B /* ContactTests.swift */; };
+		A040F7531D6FB8CF0083325B /* TransferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040F7521D6FB8CF0083325B /* TransferTests.swift */; };
+		A040F7571D6FC5C50083325B /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040F7561D6FC5C50083325B /* StringTests.swift */; };
+		A040F7591D6FC7520083325B /* ContactDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040F7581D6FC7520083325B /* ContactDataManagerTests.swift */; };
 		A05A76AD1D6F2E7D0092B725 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = A05A76AC1D6F2E7D0092B725 /* me.png */; };
 		A0BD1BBC1D6DE8580040A71D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */; };
 		A0BD1BBE1D6DEAEA0040A71D /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */; };
@@ -75,10 +78,13 @@
 		A02098161D6DCCE7003283AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A02098181D6DCCE7003283AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A020981D1D6DCCE7003283AE /* NeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A02098211D6DCCE7003283AE /* NeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonTests.swift; sourceTree = "<group>"; };
 		A02098231D6DCCE7003283AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A040F74C1D6F95E90083325B /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		A040F74E1D6F99AC0083325B /* SCLAlertView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCLAlertView+Ext.swift"; sourceTree = "<group>"; };
+		A040F7501D6FB6360083325B /* ContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
+		A040F7521D6FB8CF0083325B /* TransferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferTests.swift; sourceTree = "<group>"; };
+		A040F7561D6FC5C50083325B /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringTests.swift; path = ../Neon/StringTests.swift; sourceTree = "<group>"; };
+		A040F7581D6FC7520083325B /* ContactDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDataManagerTests.swift; sourceTree = "<group>"; };
 		A05A76AC1D6F2E7D0092B725 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		A0BD1BBB1D6DE8580040A71D /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		A0BD1BBD1D6DEAEA0040A71D /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
@@ -187,8 +193,11 @@
 		A02098201D6DCCE7003283AE /* NeonTests */ = {
 			isa = PBXGroup;
 			children = (
-				A02098211D6DCCE7003283AE /* NeonTests.swift */,
 				A02098231D6DCCE7003283AE /* Info.plist */,
+				A040F7501D6FB6360083325B /* ContactTests.swift */,
+				A040F7561D6FC5C50083325B /* StringTests.swift */,
+				A040F7521D6FB8CF0083325B /* TransferTests.swift */,
+				A040F7581D6FC7520083325B /* ContactDataManagerTests.swift */,
 			);
 			path = NeonTests;
 			sourceTree = "<group>";
@@ -537,7 +546,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A02098221D6DCCE7003283AE /* NeonTests.swift in Sources */,
+				A040F7591D6FC7520083325B /* ContactDataManagerTests.swift in Sources */,
+				A040F7531D6FB8CF0083325B /* TransferTests.swift in Sources */,
+				A040F7571D6FC5C50083325B /* StringTests.swift in Sources */,
+				A040F7511D6FB6360083325B /* ContactTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

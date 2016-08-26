@@ -4,7 +4,6 @@ use_frameworks!
 
 def shared_pods
     pod 'Alamofire'
-    pod 'RealmSwift'
     pod 'SCLAlertView'
 end
 
